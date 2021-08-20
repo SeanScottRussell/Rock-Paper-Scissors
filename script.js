@@ -2,55 +2,51 @@
 const computerChoice = ['Rock', 'Paper', 'Scissors'];
 const computerPlay = computerChoice[Math.floor(Math.random()*computerChoice.length)];
 let computerSelection = computerPlay;
-let playerSelection = 'Scissors'
+//Player chooses rock/paper/scissors
+const playerSelection = prompt('Rock, Paper, Scissors?')
 //Capatilize player selection
-function capPlayerSelection(playerSelection){;
+function capPlayerSelection(string){;
    let lower = playerSelection.toLowerCase();
-        return
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
 }
+let playerSelectionClean = capPlayerSelection();
 
-//function capitalize(string){
-   // let stringLower = string.toLowerCase();
-   // return stringLower.charAt(0).toUpperCase() + stringLower.slice(1);
-  //}
+//function to make sure player selects rock/paper/scissors
 
-console.log(capPlayerSelection())
 //Define win/lose/tie
-let tie = 'It\'s a tie'
-let lose = 'You lose! ' + computerSelection + ' beats ' + playerSelection + '.'
-let win = 'You win! ' + playerSelection + ' beats ' + computerSelection + '.'
+let tie = 'It\'s a tie';
+let lose = 'You lose! ' + computerSelection + ' beats ' + playerSelectionClean + '.';
+let win = 'You win! ' + playerSelectionClean + ' beats ' + computerSelection + '.';
 
-console.log(computerSelection)
 //compare computerSelection to playerSelection and determine who is winner
-//function compare(){
     
 function compare(){
-    if ((playerSelection == 'Rock') && (computerSelection == 'Rock')){
+    if ((playerSelectionClean == 'Rock') && (computerSelection == 'Rock')){
         return tie;
-    } else if ((playerSelection == 'Rock') && (computerSelection == 'Paper')){
+    } else if ((playerSelectionClean == 'Rock') && (computerSelection == 'Paper')){
         return lose;
-    } else if ((playerSelection == 'Rock') && (computerSelection == 'Scissors')){
+    } else if ((playerSelectionClean == 'Rock') && (computerSelection == 'Scissors')){
         return win;
-    } else if ((playerSelection == 'Paper') && (computerSelection == 'Rock')){
+    } else if ((playerSelectionClean == 'Paper') && (computerSelection == 'Rock')){
         return win;
-    } else if ((playerSelection == 'Paper') && (computerSelection == 'Paper')){
+    } else if ((playerSelectionClean == 'Paper') && (computerSelection == 'Paper')){
         return tie;
-    } else if ((playerSelection == 'Paper') && (computerSelection == 'Scissors')){
+    } else if ((playerSelectionClean == 'Paper') && (computerSelection == 'Scissors')){
         return lose;
-    } else if ((playerSelection == 'Scissors') && (computerSelection == 'Rock')){
+    } else if ((playerSelectionClean == 'Scissors') && (computerSelection == 'Rock')){
         return lose;
-    }  else if ((playerSelection == 'Scissors') && (computerSelection == 'Paper')){
+    }  else if ((playerSelectionClean == 'Scissors') && (computerSelection == 'Paper')){
         return win;
-    } else if ((playerSelection == 'Scissors') && (computerSelection == 'Scissors')){
+    } else ((playerSelectionClean == 'Scissors') && (computerSelection == 'Scissors'))
         return tie;
-    } else {
-        return 'You do know how to play this game, yeah?'
-    }
-//need to put else statement for something that isn't rock/paper/scissors
 } 
 
+//Play game 5 round game and return winner/loser
+//function game(){
+//    playerSelection
+//}
+//Play game 5 times
+//Keep track of games
+//Return winner/loser after 5 games are played
 
 console.log(compare())
-
-//determine who is winner
-//return winner/loser
