@@ -66,44 +66,50 @@ function playRound(playerSelection, computerSelection){
 
 let gamesWon = 0
 let gamesLost = 0
+let gamesTied = 0
 function game(){
     console.log(playRound(prompt('Rock, paper, scissors?'), computerPlay()));
     if (playerWins){
         gamesWon++;
     } else if (computerWins){
         gamesLost++;
-    }
+    } else 
+        gamesTied++
     console.log(playRound(prompt('Rock, paper, scissors?'), computerPlay()));
     if (playerWins){
         gamesWon++;
     } else if (computerWins){
         gamesLost++;
-    }
+    } else 
+        gamesTied++
     console.log(playRound(prompt('Rock, paper, scissors?'), computerPlay()));
     if (playerWins){
         gamesWon++;
     } else if (computerWins){
         gamesLost++;
-    }
+    } else 
+        gamesTied++
     console.log(playRound(prompt('Rock, paper, scissors?'), computerPlay()));
     if (playerWins){
         gamesWon++;
     } else if (computerWins){
         gamesLost++;
-    }
+    } else 
+        gamesTied++
     console.log(playRound(prompt('Rock, paper, scissors?'), computerPlay()));
     if (playerWins){
         gamesWon++;
     } else if (computerWins){
         gamesLost++;
-    }
+    } else 
+        gamesTied++
 
     if (gamesWon > gamesLost){
-        console.log('You won! Games won =  ' + gamesWon + ', games = lost ' + gamesLost)
+        console.log('You won! Games won =  ' + gamesWon + ', games lost = ' + gamesLost)
     } else if (gamesLost > gamesWon){
-        console.log('You lost! Games won = ' + gamesWon + ', games = lost ' + gamesLost)
+        console.log('You lost! Games won = ' + gamesWon + ', games lost = ' + gamesLost)
     } else
-        console.log('It\'s a tie! We both won ' + gamesWon)
+        console.log('It\'s a tie! Games won = ' + gamesWon + ', games lost = ' + gamesLost + ', games tied = ' + gamesTied)
 }
 game()
 
